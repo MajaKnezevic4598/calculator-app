@@ -115,7 +115,20 @@ reset.addEventListener("click", function (e) {
   result = null;
 });
 
-del.addEventListener("click", function (e) {
-  display2.innerText = "";
-  dis2Num = "";
-});
+del.addEventListener("click", deleteLastNumber);
+
+
+function deleteLastNumber() {
+  let str = display2.textContent;
+  console.log(str)
+
+  if (str.length == 1) {
+    str = "0";
+    display2.textContent = str;
+    dis2Num="";
+  } else if (str.length > 1) {
+    let newString = str.slice(0, -1);
+    display2.textContent = newString;
+    dis2Num = newString;
+  }
+}

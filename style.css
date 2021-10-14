@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+
+
+
+.theme-1{
+    --main-backgrund:#3A4663;
+    --display-bg-color:#181F33;
+    --buttons-conteiner-bg:#242D44;
+    --buttons-color:#EAE3DC;
+    --end-result-number:#FFFFFF;
+    --button-number:#434A59;
+    --del-reset-button:#647198;
+    --equal-button:#D03F2F;
+    --button-number-hover:#FFF;
+    --del-reset-button-hover:#A2B2E1;
+    --equal-button-hover:#F96B5B;
+    --reset-del-font-color:#FFF;
+    --equal-sign-color:#FFF;
+    
+
+
+   
+
+}
+.theme-2{
+    --main-backgrund:#E6E6E6;
+    --display-bg-color:#EEEEEE;
+    --buttons-conteiner-bg:#D2CDCD;
+    --buttons-color:#E5E4E1;
+    --end-result-number:#36362C;
+    --button-number:#36362C;
+    --del-reset-button:#378187;
+    --equal-button:#C85402;
+     --button-number-hover:#FFF;
+    --del-reset-button-hover:#62B5BC;
+    --equal-button-hover:#FF8A38;
+     --reset-del-font-color:#FFF;
+    --equal-sign-color:#FFF;
+}
+
+.theme-3{
+    --main-backgrund:#17062A;
+    --display-bg-color:#1E0936;
+    --buttons-conteiner-bg:#1E0936;
+    --buttons-color:#331C4D;
+    --end-result-number:#FFE53D;
+    --button-number:#FFE53D;
+    --del-reset-button:#56077C;
+    --equal-button:#00DED0;
+     --button-number-hover:#6C34AC;
+    --del-reset-button-hover:#8631AF;
+    --equal-button-hover:#93FFF8;
+      --reset-del-font-color:#FFF;
+      --equal-sign-color:#1A2327;
+
+}
+/*del i reset imaju drugaciju boju za box shadow*/
+
+body{
+    font-family: 'Spartan', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+}
+
+.main{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main-backgrund);
+}
+.calculator-conteiner{
+    width: 30%;
+    height: 80%;
+    border: 1px solid black;
+   
+}
+.calc-header{
+    height: 8vh;
+    /* width: 100%; */
+    border:1px solid red;
+    display: flex;  justify-content: space-around;
+    color:var(--end-result-number)
+    
+}
+
+.calc-title{
+  
+    width: auto;
+    border: 3px solid green;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 0.5vh;
+    font-size: 2vw;
+   
+    
+}
+.calc-theme{
+    border: 1px solid grey;
+    font-size:0.8vw;
+    margin-left: auto;
+    margin-right: 1vw;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 1vh;
+   
+}
+
+.theme-switcher{
+    border: 1px solid red;
+    width: 16%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+   
+}
+
+.change-theme{
+    height: 3vh;
+   
+    border-radius: 6px;
+    /* padding-bottom: 1vh; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--buttons-conteiner-bg);
+}
+.change-theme>div{
+    width: 0.9vw;
+ 
+    height: 0.9vw;
+    border-radius: 50%;
+}
+.change-theme>div:hover{
+    cursor: pointer;
+}
+.theme-number{
+    font-size:0.8vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 0.3vw;
+}
+
+.display{
+    height: 18%;
+    border: 1px solid blue;
+    background-color: var(--display-bg-color);
+    border-radius: 6px;
+    margin:3vh 0;
+    box-shadow: 0 4px 4px rgba(0,0,0,25%);
+    color:var(--end-result-number);
+    font-size:3.5vw;
+    text-align: right;
+    /* display: flex;
+    align-items: flex-end;
+    justify-content: flex-end; */
+    padding: 1vw;
+    position: relative;
+}
+.display-1{
+    opacity: 0.4;
+    font-size: 2.8vw;
+    height: 7vh;
+    overflow: hidden;
+}
+
+.temp-result{
+   position: absolute; 
+   bottom: 0;
+   left:1vw;
+   font-size:2.8vw;
+   opacity: 0.4;
+}
+
+.calc-interface{
+    height: 60%;
+    border:1px solid grey;
+    border-radius: 6px;
+    display:grid;
+    grid-template-rows: repeat(5, 14%);
+    grid-template-columns: repeat(4,18%); 
+    justify-content: center;
+    align-content: center;  
+    gap:4%; 
+    background-color: var(--buttons-conteiner-bg);
+    box-shadow: 0 4px 4px rgba(0,0,0,25%);
+}
+.calc-interface>div{
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3vw;
+     box-shadow: inset 0 -3px 0px rgba(65, 53, 53, 0.25);
+     cursor:pointer;
+}
+.reset,.equal{
+    grid-column: span 2;
+}
+.numbers, .operation, .dot{
+     background-color: var(--buttons-color);
+     color:var(--button-number);
+}
+.numbers:hover, .operation:hover, .dot:hover{
+    background-color: var(--button-number-hover);
+}
+
+
+.del,.reset {
+    background-color: var(--del-reset-button);
+    color:var(--reset-del-font-color);
+}
+.del:hover, .reset:hover{
+    background-color: var(--del-reset-button-hover);
+}
+
+.equal{
+    background-color: var(--equal-button);
+    color:var(--equal-sign-color);
+}
+.equal:hover{
+    background-color: var(--equal-button-hover);
+}
+.theme1{
+    background-color: #D03F2F;
+  
+}
+.theme2{
+    background-color:#C85402 ;
+    
+}
+.theme3{
+    background-color: #00DED0;
+
+}
+

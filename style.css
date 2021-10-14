@@ -66,7 +66,7 @@ body{
 }
 
 .main{
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     display: flex;
     align-items: center;
@@ -244,6 +244,110 @@ body{
 .theme3{
     background-color: #00DED0;
 
+}
+
+@media all and (max-width:1024px){
+    .calculator-conteiner{
+        width: 55%;
+        height: 70%;
+    }
+    .calc-header{
+        height: 6vh;
+    }
+    .calc-title{
+        font-size: 3.5vw;
+    }
+    .calc-theme{
+        font-size: 1.8vw;
+    }
+    .theme-number{
+        font-size: 1.6vw;
+    }
+    .change-theme{
+        height: 2.2vh;
+    }
+    .change-theme>div{
+        width: 1.4vw;
+        height: 1.4vw;
+    }
+    .display{
+        height: 12%;
+        margin:1.5vh 0;
+    }
+    .display-1{
+        height: auto;
+        font-size: 3vh;
+        padding-bottom: 2vh;
+    }
+    .calc-interface>div{
+        font-size:2.2vw;
+    }
+}
+
+@media all and (max-width:768px){
+    .calculator-conteiner{
+        width: 60%;
+    }
+    .calc-title{
+        font-size: 3.8vw;
+    } 
+    .calc-theme{
+        font-size: 1.8vw;
+    }
+    
+    .theme-number{
+        font-size: 1.8vw;
+    }
+     .change-theme>div{
+        width: 1.6vw;
+        height: 1.6vw;
+    }
+    
+    .calc-interface>div{
+        font-size:3vw;
+    } 
+    .display-1, .temp-result {
+        font-size: 4vw;
+    }
+    .display-2{
+        font-size: 5.5vw;
+    }
+
+}
+
+@media all and (max-width:480px){
+  body{
+      height: 105vh;
+  }
+    .calculator-conteiner{
+        width: 90%;
+        margin-top:4vh;
+    }
+    .main {
+        align-items: flex-start;
+    }
+     .calc-title{
+        font-size: 5vw;
+    } 
+     .calc-theme{
+        font-size: 2.4vw;
+    }
+     .theme-number{
+        font-size: 2vw;
+    }
+    .change-theme>div{
+        width: 2.2vw;
+        height: 2.2vw;
+    }
+      .display-1, .temp-result {
+        font-size: 5vw;
+    }
+    .display-2{
+        font-size: 6.5vw;
+    }
+     .calc-interface>div{
+        font-size:4vw;
+    } 
 }
 
 

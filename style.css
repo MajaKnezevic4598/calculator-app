@@ -75,49 +75,36 @@ body{
 }
 .calculator-conteiner{
     width: 30%;
-    height: 80%;
-    border: 1px solid black;
-   
+    height: 80%; 
 }
 .calc-header{
     height: 8vh;
-    /* width: 100%; */
-    border:1px solid red;
     display: flex;  justify-content: space-around;
     color:var(--end-result-number)
-    
 }
 
 .calc-title{
-  
     width: auto;
-    border: 3px solid green;
     display: flex;
     align-items: flex-end;
     padding-bottom: 0.5vh;
     font-size: 2vw;
-   
-    
 }
+
 .calc-theme{
-    border: 1px solid grey;
     font-size:0.8vw;
     margin-left: auto;
     margin-right: 1vw;
     display: flex;
     align-items: flex-end;
     padding-bottom: 1vh;
-   
 }
 
 .theme-switcher{
-    border: 1px solid red;
     width: 16%;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     justify-content: center;
-   
 }
 
 .change-theme{
@@ -132,13 +119,14 @@ body{
 }
 .change-theme>div{
     width: 0.9vw;
- 
     height: 0.9vw;
     border-radius: 50%;
 }
+
 .change-theme>div:hover{
     cursor: pointer;
 }
+
 .theme-number{
     font-size:0.8vw;
     display: flex;
@@ -149,27 +137,23 @@ body{
 
 .display{
     height: 18%;
-    border: 1px solid blue;
     background-color: var(--display-bg-color);
     border-radius: 6px;
     margin:3vh 0;
     box-shadow: 0 4px 4px rgba(0,0,0,25%);
     color:var(--end-result-number);
-    /* font-size:3.5vw; */
     text-align: right;
-    /* display: flex;
-    align-items: flex-end;
-    justify-content: flex-end; */
     padding: 1vw;
     position: relative;
 }
+
 .display-1{
     opacity: 0.4;
     font-size: 1.5vw;
     height: 7vh;
     overflow: hidden;
-    text-overflow: ellipsis;
 }
+
 .display-2{
     font-size:3.2vw;
     overflow: hidden;
@@ -186,7 +170,6 @@ body{
 
 .calc-interface{
     height: 60%;
-    border:1px solid grey;
     border-radius: 6px;
     display:grid;
     grid-template-rows: repeat(5, 14%);
@@ -197,6 +180,7 @@ body{
     background-color: var(--buttons-conteiner-bg);
     box-shadow: 0 4px 4px rgba(0,0,0,25%);
 }
+
 .calc-interface>div{
     border-radius: 6px;
     display: flex;

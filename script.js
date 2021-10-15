@@ -14,28 +14,74 @@ const numberButtons = document.querySelectorAll(".numbers");
 const operationButtons = document.querySelectorAll(".operation");
 const equal = document.querySelector(".equal");
 console.log(numberButtons);
-
 const reset = document.querySelector(".reset");
 const del = document.querySelector(".del");
 
-theme1.addEventListener("click", function () {
+let activeTheme = localStorage.getItem("theme");
+console.log(activeTheme);
+
+function activeTheme1() {
   theme1.classList.add("theme1");
   theme2.classList.remove("theme2");
   theme3.classList.remove("theme3");
   body.className = "theme-1";
-});
+  localStorage.setItem("theme", "theme-1");
+}
 
-theme2.addEventListener("click", function () {
+function activeTheme2() {
   theme2.classList.add("theme2");
   theme1.classList.remove("theme1");
   theme3.classList.remove("theme3");
   body.className = "theme-2";
-});
-theme3.addEventListener("click", function () {
+  localStorage.setItem("theme", "theme-2");
+}
+
+function activeTheme3() {
   theme3.classList.add("theme3");
   theme2.classList.remove("theme2");
   theme1.classList.remove("theme1");
   body.className = "theme-3";
+  localStorage.setItem("theme", "theme-3");
+}
+
+if (activeTheme === "theme-1") {
+  activeTheme1();
+} else if (activeTheme === "theme-2") {
+  activeTheme2();
+} else if (activeTheme === "theme-3") {
+  activeTheme3();
+}
+
+theme1.addEventListener("click", () => {
+  activeTheme = localStorage.getItem("theme");
+  if (
+    activeTheme === "theme-3" ||
+    activeTheme === "theme-2" ||
+    activeTheme === "theme-1"
+  ) {
+    activeTheme1();
+  }
+});
+
+theme2.addEventListener("click", () => {
+  activeTheme = localStorage.getItem("theme");
+  if (
+    activeTheme === "theme-3" ||
+    activeTheme === "theme-2" ||
+    activeTheme === "theme-1"
+  ) {
+    activeTheme2();
+  }
+});
+theme3.addEventListener("click", () => {
+  activeTheme = localStorage.getItem("theme");
+  if (
+    activeTheme === "theme-3" ||
+    activeTheme === "theme-2" ||
+    activeTheme === "theme-1"
+  ) {
+    activeTheme3();
+  }
 });
 
 let dis1Num = "";
@@ -91,7 +137,7 @@ function mathOperation() {
   } else if (lastOperation === "-") {
     result = parseFloat(result) - parseFloat(dis2Num);
   } else if (lastOperation === "/") {
-    result = parseFloat(result) / parseFloat(dis2Num);
+    result = (parseFloat(result) / parseFloat(dis2Num)).toFixed(2);
   }
 }
 
@@ -117,15 +163,14 @@ reset.addEventListener("click", function (e) {
 
 del.addEventListener("click", deleteLastNumber);
 
-
 function deleteLastNumber() {
   let str = display2.textContent;
-  console.log(str)
+  console.log(str);
 
   if (str.length == 1) {
     str = "0";
     display2.textContent = str;
-    dis2Num="";
+    dis2Num = "";
   } else if (str.length > 1) {
     let newString = str.slice(0, -1);
     display2.textContent = newString;

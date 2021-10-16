@@ -16,9 +16,10 @@ const equal = document.querySelector(".equal");
 console.log(numberButtons);
 const reset = document.querySelector(".reset");
 const del = document.querySelector(".del");
-
 let activeTheme = localStorage.getItem("theme");
-console.log(activeTheme);
+const numbersTheme = document.querySelectorAll(".theme-number>span");
+console.log(numbersTheme);
+//sada ovde imamo postavljamo event listener na svako dugme
 
 function activeTheme1() {
   theme1.classList.add("theme1");
@@ -55,6 +56,7 @@ if (activeTheme === "theme-1") {
 theme1.addEventListener("click", () => {
   activeTheme = localStorage.getItem("theme");
   if (
+    activeTheme == null ||
     activeTheme === "theme-3" ||
     activeTheme === "theme-2" ||
     activeTheme === "theme-1"
@@ -63,9 +65,24 @@ theme1.addEventListener("click", () => {
   }
 });
 
+numbersTheme[0].addEventListener("click", () => {
+  activeTheme = localStorage.getItem("theme");
+  if (
+    activeTheme == null ||
+    activeTheme === "theme-3" ||
+    activeTheme === "theme-2" ||
+    activeTheme === "theme-1"
+  ) {
+    activeTheme1();
+  }
+});
+
+
+
 theme2.addEventListener("click", () => {
   activeTheme = localStorage.getItem("theme");
   if (
+    activeTheme == null ||
     activeTheme === "theme-3" ||
     activeTheme === "theme-2" ||
     activeTheme === "theme-1"
@@ -73,9 +90,37 @@ theme2.addEventListener("click", () => {
     activeTheme2();
   }
 });
-theme3.addEventListener("click", () => {
+
+numbersTheme[1].addEventListener("click", () => {
   activeTheme = localStorage.getItem("theme");
   if (
+    activeTheme == null ||
+    activeTheme === "theme-3" ||
+    activeTheme === "theme-2" ||
+    activeTheme === "theme-1"
+  ) {
+    activeTheme2();
+  }
+});
+
+
+theme3.addEventListener("click", () => {
+ 
+  activeTheme = localStorage.getItem("theme");
+  if (
+    activeTheme == null ||
+    activeTheme === "theme-3" ||
+    activeTheme === "theme-2" ||
+    activeTheme === "theme-1"
+  ) {
+    activeTheme3();
+  }
+});
+
+numbersTheme[2].addEventListener("click", () => {
+  activeTheme = localStorage.getItem("theme");
+  if (
+    activeTheme == null ||
     activeTheme === "theme-3" ||
     activeTheme === "theme-2" ||
     activeTheme === "theme-1"
@@ -127,6 +172,7 @@ function clearVar(name = "") {
   display2.innerText = "";
   dis2Num = "";
   tempResult.innerText = result;
+ 
 }
 
 function mathOperation() {
@@ -138,6 +184,7 @@ function mathOperation() {
     result = parseFloat(result) - parseFloat(dis2Num);
   } else if (lastOperation === "/") {
     result = (parseFloat(result) / parseFloat(dis2Num)).toFixed(2);
+   
   }
 }
 
@@ -147,9 +194,12 @@ equal.addEventListener("click", function (e) {
   mathOperation();
   clearVar();
   display2.innerText = result;
+  
   tempResult.innerText = "";
   dis2Num = result;
+   console.log(result);
   dis1Num = "";
+ result = 0;
 });
 
 reset.addEventListener("click", function (e) {

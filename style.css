@@ -135,6 +135,10 @@ body{
     margin-bottom: 0.3vw;
 }
 
+.theme-number>span{
+    cursor: pointer;
+}
+
 .display{
     height: 18%;
     background-color: var(--display-bg-color);
@@ -166,6 +170,7 @@ body{
    left:1vw;
    font-size:2.8vw;
    opacity: 0.4;
+   visibility: hidden;
 }
 
 .calc-interface{
